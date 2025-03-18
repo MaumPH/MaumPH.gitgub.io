@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>비용 - 마음편한주야간보호센터</title>
+    <style>
+        :root {
+            --main-color: #FFD1DC; /* 연분홍색 */
+            --dark-pink: #F8BBD0;
+            --light-pink: #FFEEF2;
+            --text-color: #333;
+            --accent-color: #E91E63;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: var(--main-color);
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: #fff;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+        
+        .page-title {
+            background-color: var(--light-pink);
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .page-title h1 {
+            font-size: 36px;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+        
+        .page-title p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .pricing-section {
+            padding: 80px 0;
+        }
+        
+        .pricing-info {
+            background-color: var(--light-pink);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+        
+        .pricing-info h3 {
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        
+        .pricing-info p {
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        
+        .pricing-highlight {
+            font-weight: 700;
+            color: var(--accent-color);
+            font-size: 20px;
+        }
+        
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .pricing-table th, .pricing-table td {
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #eee;
+        }
+        
+        .pricing-table th {
+            background-color: var(--dark-pink);
+            color: white;
+        }
+        
+        .pricing-table tr:nth-child(even) {
+            background-color: var(--light-pink);
+        }
+        
+        .documents-section {
+            background-color: var(--light-pink);
+            padding: 40px;
+            border-radius: 10px;
+            margin-top: 60px;
+        }
+        
+        .documents-section h3 {
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            font-size: 24px;
+            text-align: center;
+        }
+        
+        .documents-list {
+            list-style: none;
+        }
+        
+        .documents-list li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .documents-list li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+        
+        .note-section {
+            margin-top: 60px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            border-left: 4px solid var(--accent-color);
+        }
+        
+        .note-section h3 {
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+        
+        footer {
+            background-color: var(--main-color);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+        
+        .footer-column p, .footer-column a {
+            display: block;
+            margin-bottom: 10px;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+            }
+            
+            nav ul li {
+                margin: 0 10px;
+            }
+            
+            .pricing-table {
+                font-size: 14px;
+            }
+            
+            .pricing-table th, .pricing-table td {
+                padding: 10px 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">마음편한주야간보호센터</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">홈</a></li>
+                    <li><a href="about.html">센터소개</a></li>
+                    <li><a href="schedule.html">시간표</a></li>
+                    <li><a href="programs.html">프로그램</a></li>
+                    <li><a href="pricing.html">비용</a></li>
+                    <li><a href="gallery.html">사진</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-title">
+        <div class="container">
+            <h1>비용</h1>
+            <p>합리적인 비용으로 최고의 서비스를 제공합니다</p>
+        </div>
+    </section>
+
+    <section class="pricing-section">
+        <div class="container">
+            <div class="pricing-info">
+                <h3>이용료</h3>
+                <p class="pricing-highlight">국비지원 85~100%(기초수급자 무료)</p>
+                <p>장기요양등급에 따라 본인부담금이 달라집니다.</p>
+                <p>자세한 비용 안내는 전화 문의 부탁드립니다.</p>
+                <p><strong>전화번호:</strong> 010-6242-9450</p>
+            </div>
+            
+            <table class="pricing-table">
+                <thead>
+                    <tr>
+                        <th>등급</th>
+                        <th>국비지원</th>
+                        <th>본인부담금</th>
+                        <th>비고</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1등급</td>
+                        <td>85%</td>
+                        <td>15%</td>
+                        <td>일반</td>
+                    </tr>
+                    <tr>
+                        <td>2등급</td>
+                        <td>85%</td>
+                        <td>15%</td>
+                        <td>일반</td>
+                    </tr>
+                    <tr>
+                        <td>3등급</td>
+                        <td>85%</td>
+                        <td>15%</td>
+                        <td>일반</td>
+                    </tr>
+                    <tr>
+                        <td>4등급</td>
+                        <td>85%</td>
+                        <td>15%</td>
+                        <td>일반</td>
+                    </tr>
+                    <tr>
+                        <td>5등급</td>
+                        <td>85%</td>
+                        <td>15%</td>
+                        <td>일반</td>
+                    </tr>
+                    <tr>
+                        <td>인지지원등급</td>
+                        <td>85%</td>
+                        <td>15%</td>
+                        <td>일반</td>
+                    </tr>
+                    <tr>
+                        <td>기초수급자</td>
+                        <td>100%</td>
+                        <td>0%</td>
+                        <td>무료</td>
+                    </tr>
+                    <tr>
+                        <td>감경대상자</td>
+                        <td>91.2%</td>
+                        <td>8.8%</td>
+                        <td>감경</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="documents-section">
+                <h3>이용신청 구비서류</h3>
+                <ul class="documents-list">
+                    <li>장기요양인정서</li>
+                    <li>개인별장기요양계획서</li>
+                    <li>복지용구급여확인서</li>
+                    <li>주민등록등본</li>
+                </ul>
+            </div>
+            
+            <div class="note-section">
+                <h3>알려드립니다</h3>
+                <p>등급 신청을 도와드립니다. 장기요양등급이 없으신 분들도 마음편하게 연락주세요.</p>
+                <p>장기요양등급 신청부터 이용까지 친절하게 안내해 드립니다.</p>
+                <p>문의전화: 010-6242-9450</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>마음편한주야간보호센터</h3>
+                    <p>최고의 친환경 노인복지시설</p>
+                    <p>장기요양등급 1~5등급, 인지지원등급 어르신</p>
+                </div>
+                <div class="footer-column">
+                    <h3>연락처</h3>
+                    <p>전화: 010-6242-9450</p>
+                    <p>팩스: 055-338-0440</p>
+                    <p>주소: 김해시 율하로 346번길 26 (약사암, 카사벨라 밑)</p>
+                </div>
+                <div class="footer-column">
+                    <h3>이용시간</h3>
+                    <p>월~토, 공휴일</p>
+                    <p>08:00~19:00</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 마음편한주야간보호센터. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

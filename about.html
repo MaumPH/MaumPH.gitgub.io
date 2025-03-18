@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>센터소개 - 마음편한주야간보호센터</title>
+    <style>
+        :root {
+            --main-color: #FFD1DC; /* 연분홍색 */
+            --dark-pink: #F8BBD0;
+            --light-pink: #FFEEF2;
+            --text-color: #333;
+            --accent-color: #E91E63;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: var(--main-color);
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: #fff;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+        
+        .page-title {
+            background-color: var(--light-pink);
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .page-title h1 {
+            font-size: 36px;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+        
+        .page-title p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .about-section {
+            padding: 80px 0;
+        }
+        
+        .about-section:nth-child(even) {
+            background-color: var(--light-pink);
+        }
+        
+        .section-title {
+            margin-bottom: 40px;
+        }
+        
+        .section-title h2 {
+            font-size: 30px;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h3 {
+            font-size: 24px;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+        }
+        
+        .about-text ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .about-text li {
+            margin-bottom: 10px;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .facilities {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .facility-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .facility-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .facility-card-content {
+            padding: 20px;
+        }
+        
+        .facility-card h3 {
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+        
+        footer {
+            background-color: var(--main-color);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+        
+        .footer-column p, .footer-column a {
+            display: block;
+            margin-bottom: 10px;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+            }
+            
+            nav ul li {
+                margin: 0 10px;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">마음편한주야간보호센터</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">홈</a></li>
+                    <li><a href="about.html">센터소개</a></li>
+                    <li><a href="schedule.html">시간표</a></li>
+                    <li><a href="programs.html">프로그램</a></li>
+                    <li><a href="pricing.html">비용</a></li>
+                    <li><a href="gallery.html">사진</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-title">
+        <div class="container">
+            <h1>센터소개</h1>
+            <p>마음편한주야간보호센터는 어르신들의 건강과 행복을 위해 최선을 다합니다</p>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>주간보호센터란?</h3>
+                    <p>부득이한 사유로 인해 가족의 보호를 받을 수 없는 어르신들을 주간 또는 야간 동안에 보호시설에 입소시켜 필요한 각종 편의를 제공하고, 이들의 생활안정과 심신기능의 유지·향상을 도모하고, 그 가족의 신체적·정신적 부담을 경감하는 데에 목적을 두고 있습니다.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://placehold.co/600x400" alt="마음편한주야간보호센터 전경">
+                </div>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://placehold.co/600x400" alt="어르신 케어 서비스">
+                </div>
+                <div class="about-text">
+                    <h3>마음편한주야간보호센터의 서비스</h3>
+                    <p>치매, 뇌졸중 등 다양한 노인성질환을 가진 어르신들을 낮 시간동안 서비스를 제공해드림으로써 어르신들의 삶의 질을 향상시켜드립니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>시설 안내</h2>
+                <p>저희 센터는 다음과 같은 시설을 갖추고 있습니다:</p>
+            </div>
+            
+            <div class="facilities">
+                <div class="facility-card">
+                    <img src="https://placehold.co/600x400" alt="생활실">
+                    <div class="facility-card-content">
+                        <h3>생활실</h3>
+                        <p>어르신들이 편안하게 생활할 수 있는 공간으로, 안전하고 쾌적한 환경을 제공합니다.</p>
+                    </div>
+                </div>
+                <div class="facility-card">
+                    <img src="https://placehold.co/600x400" alt="프로그램실">
+                    <div class="facility-card-content">
+                        <h3>프로그램실</h3>
+                        <p>다양한 인지활동, 신체활동 프로그램을 진행하는 공간입니다.</p>
+                    </div>
+                </div>
+                <div class="facility-card">
+                    <img src="https://placehold.co/600x400" alt="수면실(남)">
+                    <div class="facility-card-content">
+                        <h3>수면실(남)</h3>
+                        <p>남성 어르신들이 휴식을 취할 수 있는 편안한 공간입니다.</p>
+                    </div>
+                </div>
+                <div class="facility-card">
+                    <img src="https://placehold.co/600x400" alt="수면실(여)">
+                    <div class="facility-card-content">
+                        <h3>수면실(여)</h3>
+                        <p>여성 어르신들이 휴식을 취할 수 있는 편안한 공간입니다.</p>
+                    </div>
+                </div>
+                <div class="facility-card">
+                    <img src="https://placehold.co/600x400" alt="물리치료실">
+                    <div class="facility-card-content">
+                        <h3>물리치료실</h3>
+                        <p>어르신들의 신체기능 유지 및 향상을 위한 물리치료 서비스를 제공하는 공간입니다.</p>
+                    </div>
+                </div>
+                <div class="facility-card">
+                    <img src="https://placehold.co/600x400" alt="엘리베이터">
+                    <div class="facility-card-content">
+                        <h3>엘리베이터</h3>
+                        <p>거동이 불편한 어르신들의 이동을 돕기 위한 시설입니다.</p>
+                    </div>
+                </div>
+                <div class="facility-card">
+                    <img src="https://placehold.co/600x400" alt="센터 텃밭">
+                    <div class="facility-card-content">
+                        <h3>센터 텃밭</h3>
+                        <p>어르신들이 자연과 함께하는 활동을 할 수 있는 친환경 공간입니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>마음편한주야간보호센터</h3>
+                    <p>최고의 친환경 노인복지시설</p>
+                    <p>장기요양등급 1~5등급, 인지지원등급 어르신</p>
+                </div>
+                <div class="footer-column">
+                    <h3>연락처</h3>
+                    <p>전화: 010-6242-9450</p>
+                    <p>팩스: 055-338-0440</p>
+                    <p>주소: 김해시 율하로 346번길 26 (약사암, 카사벨라 밑)</p>
+                </div>
+                <div class="footer-column">
+                    <h3>이용시간</h3>
+                    <p>월~토, 공휴일</p>
+                    <p>08:00~19:00</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 마음편한주야간보호센터. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

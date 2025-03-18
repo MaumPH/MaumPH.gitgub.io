@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시간표 - 마음편한주야간보호센터</title>
+    <style>
+        :root {
+            --main-color: #FFD1DC; /* 연분홍색 */
+            --dark-pink: #F8BBD0;
+            --light-pink: #FFEEF2;
+            --text-color: #333;
+            --accent-color: #E91E63;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: var(--main-color);
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: #fff;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+        
+        .page-title {
+            background-color: var(--light-pink);
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .page-title h1 {
+            font-size: 36px;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+        
+        .page-title p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .schedule-section {
+            padding: 80px 0;
+        }
+        
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .schedule-table th, .schedule-table td {
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #eee;
+        }
+        
+        .schedule-table th {
+            background-color: var(--dark-pink);
+            color: white;
+        }
+        
+        .schedule-table tr:nth-child(even) {
+            background-color: var(--light-pink);
+        }
+        
+        .schedule-table td:first-child {
+            font-weight: bold;
+            background-color: var(--light-pink);
+        }
+        
+        .schedule-note {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: var(--light-pink);
+            border-radius: 10px;
+        }
+        
+        .schedule-note h3 {
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+        
+        .schedule-note ul {
+            margin-left: 20px;
+        }
+        
+        .schedule-note li {
+            margin-bottom: 10px;
+        }
+        
+        footer {
+            background-color: var(--main-color);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+        
+        .footer-column p, .footer-column a {
+            display: block;
+            margin-bottom: 10px;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+            }
+            
+            nav ul li {
+                margin: 0 10px;
+            }
+            
+            .schedule-table {
+                font-size: 14px;
+            }
+            
+            .schedule-table th, .schedule-table td {
+                padding: 10px 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">마음편한주야간보호센터</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">홈</a></li>
+                    <li><a href="about.html">센터소개</a></li>
+                    <li><a href="schedule.html">시간표</a></li>
+                    <li><a href="programs.html">프로그램</a></li>
+                    <li><a href="pricing.html">비용</a></li>
+                    <li><a href="gallery.html">사진</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-title">
+        <div class="container">
+            <h1>일일 일정표</h1>
+            <p>마음편한주야간보호센터의 체계적인 일과표를 확인하세요</p>
+        </div>
+    </section>
+
+    <section class="schedule-section">
+        <div class="container">
+            <table class="schedule-table">
+                <thead>
+                    <tr>
+                        <th>시간</th>
+                        <th>월</th>
+                        <th>화</th>
+                        <th>수</th>
+                        <th>목</th>
+                        <th>금</th>
+                        <th>토</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>07:50~09:50</td>
+                        <td colspan="6">오전 이동서비스(송영) 및 아침간식(죽)</td>
+                    </tr>
+                    <tr>
+                        <td>10:00~10:30</td>
+                        <td colspan="6">출석체크(건강상태확인)<br>신체활동 프로그램 및 건강체조</td>
+                    </tr>
+                    <tr>
+                        <td>10:30~11:30</td>
+                        <td colspan="6">
+                            고리던지기, 윷놀이, 안마하기, 풍선주고받기, 고무신던지기<br>
+                            컵쌓기, 컵탁구, 공차기, 발마사지, 농구, 오재미, 판뒤집기 등
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>11:30~12:30</td>
+                        <td colspan="6">점심식사 및 일상생활지도(구강청결, 투약)</td>
+                    </tr>
+                    <tr>
+                        <td>12:30~13:30</td>
+                        <td colspan="6">
+                            어르신 휴식 및 자유시간<br>
+                            건강증진(기능훈련/ 텃밭가꾸기/ 화초가꾸기/ 산책 등)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>13:30~14:00</td>
+                        <td colspan="6">오후 간식시간</td>
+                    </tr>
+                    <tr>
+                        <td>14:00~15:00</td>
+                        <td colspan="6">
+                            인지활동 프로그램<br>
+                            수계산, 미술활동, 언어활동, 음악활동 등
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>15:00~16:00</td>
+                        <td>신바람노래<br><small>*외부강사</small></td>
+                        <td>여가인지</td>
+                        <td>소리꽃<br><small>*외부강사</small></td>
+                        <td>레크레이션</td>
+                        <td>인지플레이<br><small>*외부강사</small></td>
+                        <td>레크레이션</td>
+                    </tr>
+                    <tr>
+                        <td>16:00~16:20</td>
+                        <td colspan="6">건강체조(음악, 율동)</td>
+                    </tr>
+                    <tr>
+                        <td>16:20~17:00</td>
+                        <td colspan="6">저녁식사 및 일상생활지도(구강청결, 투약)</td>
+                    </tr>
+                    <tr>
+                        <td>17:00~19:00</td>
+                        <td colspan="6">
+                            오후 이동서비스 1차·2차(송영)<br>
+                            정서지원, 레크레이션, 체조
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="schedule-note">
+                <h3>프로그램 안내</h3>
+                <ul>
+                    <li><strong>신체활동 프로그램:</strong> 어르신들의 신체기능 유지 및 향상을 위한 다양한 활동을 진행합니다.</li>
+                    <li><strong>인지활동 프로그램:</strong> 어르신들의 인지기능 유지 및 향상을 위한 다양한 활동을 진행합니다.</li>
+                    <li><strong>외부강사 프로그램:</strong> 전문 강사를 초빙하여 특별 프로그램을 진행합니다.</li>
+                    <li><strong>일상생활지도:</strong> 어르신들의 일상생활 능력 향상을 위한 지도를 진행합니다.</li>
+                </ul>
+                <p style="margin-top: 20px;"><strong>※ 프로그램은 상황에 따라 변경될 수 있습니다.</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>마음편한주야간보호센터</h3>
+                    <p>최고의 친환경 노인복지시설</p>
+                    <p>장기요양등급 1~5등급, 인지지원등급 어르신</p>
+                </div>
+                <div class="footer-column">
+                    <h3>연락처</h3>
+                    <p>전화: 010-6242-9450</p>
+                    <p>팩스: 055-338-0440</p>
+                    <p>주소: 김해시 율하로 346번길 26 (약사암, 카사벨라 밑)</p>
+                </div>
+                <div class="footer-column">
+                    <h3>이용시간</h3>
+                    <p>월~토, 공휴일</p>
+                    <p>08:00~19:00</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 마음편한주야간보호센터. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
